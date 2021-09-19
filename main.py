@@ -17,6 +17,7 @@ from kivy.uix.image import Image, Widget
 from kivy.lang import Builder
 from kivy.graphics.texture import Texture
 from kivy.clock import Clock
+from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivymd.uix.label import MDLabel
 from kivymd.uix.boxlayout import MDBoxLayout
@@ -31,9 +32,9 @@ import time
 import pickle
 import numpy as np
 import cv2
+from kivymd.uix.list import TwoLineIconListItem
 
 
-# Command: pyinstaller main.py -w <- Not this
 # COmmand: pyinstaller main.spec -y
 # Command: pyinstaller --icon=main.ico --additional-hooks-dir=hooks --hidden-import=win32file --hidden-import=win32timezone --hidden-import=win32con --hidden-import=pwintypes main.py
 
@@ -139,7 +140,7 @@ ScreenManager:
                                     FloatLayout:
                                         spacing: 50
                                         Image:
-                                            source: 'images/cw.png'
+                                            source: 'images/icw.png'
                                             pos_hint: {'center_x':0.65,'center_y':0.6}
                                             size_hint: None,None
                                             size: 200,200
@@ -273,7 +274,69 @@ ScreenManager:
                         height:(root.height-root.height)+15
         MDNavigationDrawer:
             id: nav_drawer
-
+            ContentNavigationDrawer:
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    size_hint_y: 0.85
+    padding: 5
+    GridLayout:
+        rows:4
+        spacing: 140
+        AnchorLayout:
+            Image:
+                size_hint:None,None
+                id: avatar
+                size: "256dp", "256dp"
+                source: "images/SMCL_Emblem.png"
+        MDLabel:
+            size_hint_y:None
+            size_hint_x: 0.5
+            text: "DEVELOPERS"
+            color: (0,150,136,0.8)
+            font_style: "Button"
+            font_size: 15
+            height: self.texture_size[1] 
+        AnchorLayout:
+            MDList:
+                TwoLineIconListItem:
+                    text: "[size=15]JHENO S. CERBITO[/size]"
+                    secondary_text: "[size=13]Programmer/Group Leader[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle"  
+                TwoLineIconListItem:
+                    text: "[size=15]SOPHIA MIGUELA HADI[/size]"
+                    secondary_text: "[size=13]UI Designer/Researcher[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle"  
+                TwoLineIconListItem:
+                    text: "[size=15]KIER MIGUEL DELORIA[/size]"
+                    secondary_text: "[size=13]Programmer/Researcher[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle"  
+                TwoLineIconListItem:
+                    text: "[size=15]TRICIA ELIS BLANCA[/size]"
+                    secondary_text: "[size=13]Researchers[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle" 
+                TwoLineIconListItem:
+                    text: "[size=15]KYLE SPENCER GO[/size]"
+                    secondary_text: "[size=13]Researchers[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle" 
+        MDLabel:
+            text: "https://www.smcl.edu.ph"
+            font_style: "Caption"
+            color:(0,150,136,0.8)
+            height: self.texture_size[1]
+            height: self.texture_size[1] 
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
 <LoadModelDialog>:
     BoxLayout:
         size: root.size
@@ -313,6 +376,9 @@ ScreenManager:
                 text: "Import Label"
                 on_release: root.load_label_path(label_filechooser.path, label_filechooser.selection)
 '''
+
+class ContentNavigationDrawer(BoxLayout):
+    pass
 
 class OpeningScreen(Screen):
     pass
@@ -381,7 +447,7 @@ class MainScreen(Screen):
             size=(950, 950),
             allow_stretch=False,
             keep_ratio=True,
-            pos_hint={'center_x': 1.7, 'center_y': 0.04},
+            pos_hint={'center_x': 1.7, 'center_y': 0.008},
             widget_lst=self.widget_list
 
         )
@@ -642,8 +708,10 @@ class MainApp(MDApp):
         self.progress()
         self.load_waitingscreen()
         #.init duration load time = 20
-        #Clock.schedule_once(self.helperStr.get_screen('mainscreen').start_videoCapture,0.5)
+        Clock.schedule_once(self.helperStr.get_screen('mainscreen').start_videoCapture,0.5)
         self.resetProgress()
+
+
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
