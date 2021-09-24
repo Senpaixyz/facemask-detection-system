@@ -36,8 +36,8 @@ from kivymd.uix.list import TwoLineIconListItem
 
 
 # COmmand: pyinstaller main.spec -y
-# Command: pyinstaller --icon=main.ico --additional-hooks-dir=hooks --hidden-import=win32file --hidden-import=win32timezone --hidden-import=win32con --hidden-import=pwintypes main.py
-
+# Command for With Folders: pyinstaller --icon=main.ico --additional-hooks-dir=hooks --hidden-import=configparser --hidden-import=win32file --hidden-import=win32timezone --hidden-import=win32con --hidden-import=pwintypes main.py
+# Command Onefile: pyinstaller --onefile --icon=main.ico --additional-hooks-dir=hooks --hidden-import=configparser main.py
 try:
     DBMODEL = DB(sys_config.DB_MODEL)
     DBMODEL.open_db()
@@ -277,27 +277,34 @@ ScreenManager:
             ContentNavigationDrawer:
 <ContentNavigationDrawer>:
     orientation: "vertical"
-    size_hint_y: 0.85
+    size_hint_y: 0.93
     padding: 5
     GridLayout:
-        rows:4
-        spacing: 140
+        rows:3
+        spacing: 110
         AnchorLayout:
+            size_hint_y:None
+            spacing: 100
             Image:
                 size_hint:None,None
                 id: avatar
-                size: "256dp", "256dp"
+                size: "266dp", "266dp"
                 source: "images/SMCL_Emblem.png"
-        MDLabel:
-            size_hint_y:None
-            size_hint_x: 0.5
-            text: "DEVELOPERS"
-            color: (0,150,136,0.8)
-            font_style: "Button"
-            font_size: 15
-            height: self.texture_size[1] 
         AnchorLayout:
+            size_hint_y:None
+            MDLabel:
+                text: "DEVELOPERS"
+                color: (0,150,136,0.8)
+                font_style: "Button"
+                font_size: 15
+        AnchorLayout:
+            size_hint_y:None
             MDList:
+                TwoLineIconListItem:
+                    text: "[size=15]ANNA LIZA RAMOS[/size]"
+                    secondary_text: "[size=13]Thesis Advisor[/size]"
+                    IconLeftWidget:
+                        icon: "account-circle" 
                 TwoLineIconListItem:
                     text: "[size=15]JHENO S. CERBITO[/size]"
                     secondary_text: "[size=13]Programmer/Group Leader[/size]"
@@ -323,12 +330,7 @@ ScreenManager:
                     secondary_text: "[size=13]Researchers[/size]"
                     IconLeftWidget:
                         icon: "account-circle" 
-        MDLabel:
-            text: "https://www.smcl.edu.ph"
-            font_style: "Caption"
-            color:(0,150,136,0.8)
-            height: self.texture_size[1]
-            height: self.texture_size[1] 
+
 <ItemDrawer>:
     theme_text_color: "Custom"
     on_release: self.parent.set_color_item(self)
@@ -623,17 +625,12 @@ class CameraScreen(Image):
                     cv2.circle(frame, (keypoints['mouth_right']), 2, self.yellow, 2)
                 except Exception as e:
                     print("THeres some error regarading to importing file")
-                    print(e)
-                    # print(roi.shape)
-            # Frame
-            # self.image_frame = frame
+                    print(e)            #
             buffer = cv2.flip(frame, 0).tostring()
             self.texture = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='bgr')
             self.texture.blit_buffer(buffer, colorfmt='bgr', bufferfmt='ubyte')
             self.texture = self.texture
 
-            # with self.canvas:
-            #   Rectangle(texture=self.texture, size=(900, 200))
 
 sm = ScreenManager()
 sm.add_widget(OpeningScreen(name='openingscreen'))
@@ -647,7 +644,8 @@ class MainApp(MDApp):
         self.cameraCap = None
         self.mainscreen = None
         self.db = None
-
+        self.icon = 'images/tensorflow-logo.png'
+        self.title = sys_config.TITLE
     def build(self):
         # self.theme_cls.primary_pallete = "BlueGray"
         self.theme_cls.primary_palette = sys_config.PALETTE
@@ -708,7 +706,7 @@ class MainApp(MDApp):
         self.progress()
         self.load_waitingscreen()
         #.init duration load time = 20
-        Clock.schedule_once(self.helperStr.get_screen('mainscreen').start_videoCapture,0.5)
+        Clock.schedule_once(self.helperStr.get_screen('mainscreen').start_videoCapture,1.5)
         self.resetProgress()
 
 

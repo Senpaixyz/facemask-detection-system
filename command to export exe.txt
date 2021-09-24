@@ -1,2 +1,0 @@
-# COmmand: pyinstaller main.spec -y
-# Command: pyinstaller --icon=main.ico --additional-hooks-dir=hooks --hidden-import=win32file --hidden-import=win32timezone --hidden-import=win32con --hidden-import=pwintypes main.py
