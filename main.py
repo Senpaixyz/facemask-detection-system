@@ -43,9 +43,10 @@ try:
     DBMODEL.open_db()
     DBMODEL.create_tb(sys_config.MOD_Q)
     DBMODEL.close_db()
-except Exception as e:
+except FileNotFoundError as fne:
     print("THeres some error regarading to importing file")
 
+    
 helperString = '''
 ScreenManager:
     OpeningScreen:
@@ -283,6 +284,7 @@ ScreenManager:
         rows:3
         spacing: 110
         AnchorLayout:
+            size_hint_x: 5
             size_hint_y:None
             spacing: 100
             Image:
@@ -302,7 +304,7 @@ ScreenManager:
             MDList:
                 TwoLineIconListItem:
                     text: "[size=15]ANNA LIZA RAMOS[/size]"
-                    secondary_text: "[size=13]Thesis Advisor[/size]"
+                    secondary_text: "[size=13]Thesis Adviser[/size]"
                     IconLeftWidget:
                         icon: "account-circle" 
                 TwoLineIconListItem:
@@ -322,12 +324,12 @@ ScreenManager:
                         icon: "account-circle"  
                 TwoLineIconListItem:
                     text: "[size=15]TRICIA ELIS BLANCA[/size]"
-                    secondary_text: "[size=13]Researchers[/size]"
+                    secondary_text: "[size=13]Researcher[/size]"
                     IconLeftWidget:
                         icon: "account-circle" 
                 TwoLineIconListItem:
                     text: "[size=15]KYLE SPENCER GO[/size]"
-                    secondary_text: "[size=13]Researchers[/size]"
+                    secondary_text: "[size=13]Researcher[/size]"
                     IconLeftWidget:
                         icon: "account-circle" 
 
