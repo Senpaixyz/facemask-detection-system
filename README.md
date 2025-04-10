@@ -24,7 +24,7 @@ statistical and mathematical analysis.
 
 The resizing of each image and the creation of multiple copies are achieved through the image pyramid method. This method facilitates the generation of bounding boxes and five landmark points for each detected face, a process further enhanced by utilizing Multi-task Cascade Convolutional Neural Networks (MTCNN). The MTCNN operates with 12x12 input size images, surpassing the performance of the P-net by producing bounding boxes with higher confidence values. These high-confidence bounding boxes are then refined by the R-net, which operates with a 24×24 input size, resulting in more precise bounding boxes. Subsequently, these refined bounding boxes are inputted into the O-net, which utilizes a 48×48 input size, and the output from this network is used to categorize face mask-wearing conditions alongside the ResNet-50 object classification model.
 
-![Conceptual Framework]([screenshots/conceptual-framework.png]([screenshots/conceptual-framework.png](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/conceptual-framework.png))
+![Conceptual Framework](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/conceptual-framework.png)
 
 
 ### Datasets Processing
