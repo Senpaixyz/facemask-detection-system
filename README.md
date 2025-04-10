@@ -55,7 +55,7 @@ The table provides a comparative analysis of four face detection and recognition
 
 The study's findings highlight MTCNN as the top-performing face detector. Among object classifiers, ResNet-50 achieved an average classification score of 72.5% for distances and angles, 78% for multiple detections, and 58% for occlusions, indicating limitations in detection under these conditions. Therefore, additional mathematical analysis and algorithms are recommended. However, ResNet-50 excelled with a notable 98% classification performance, especially in detecting specific categories. Specifically, it achieved an average classification performance of 88% in Correct Wearing, 89% in Incorrect Wearing, and 89% in No Face Mask categories across various conditions, demonstrating its effectiveness in these scenarios.
 
-![Conclusion](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/head/masters/screenshots/application-interface.png)
+![Conclusionssss](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/application-interface.png)
 
 ### Youtube Demo Link
 
