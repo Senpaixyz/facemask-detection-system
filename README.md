@@ -46,7 +46,7 @@ The table presents results from CNN-based object classifiers for different categ
 
 The table provides a comparative analysis of four face detection and recognition algorithms—Haar, DLIB, FaceNet, and MTCNN—across various scenarios, with Precision (Pre) and Accuracy (Acc) measured in percentages. It evaluates their performance at different distances (1m and 2m), angles (0°, 45°, 90°), and under occlusion conditions (Partial Occlusion, Half Face Occlusion). Additionally, it assesses their capability for multiple face detection. MTCNN generally shows superior performance with high Precision and Accuracy percentages, especially in detecting faces at different distances, angles, and under occlusion. However, other algorithms like DLIB and FaceNet exhibit variable performance, with differences in their Precision and Accuracy percentages based on the specific scenario being evaluated.
 
-![Results](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/refs/heads/screenshots/model-results.png)
+![Results](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/model-results.png)
 
 
 
@@ -55,7 +55,7 @@ The table provides a comparative analysis of four face detection and recognition
 
 The study's findings highlight MTCNN as the top-performing face detector. Among object classifiers, ResNet-50 achieved an average classification score of 72.5% for distances and angles, 78% for multiple detections, and 58% for occlusions, indicating limitations in detection under these conditions. Therefore, additional mathematical analysis and algorithms are recommended. However, ResNet-50 excelled with a notable 98% classification performance, especially in detecting specific categories. Specifically, it achieved an average classification performance of 88% in Correct Wearing, 89% in Incorrect Wearing, and 89% in No Face Mask categories across various conditions, demonstrating its effectiveness in these scenarios.
 
-![Conclusion](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/refs/heads/screenshots/application-interface.png)
+![Conclusion](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/head/masters/screenshots/application-interface.png)
 
 ### Youtube Demo Link
 
