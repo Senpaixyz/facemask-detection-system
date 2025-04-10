@@ -30,14 +30,14 @@ The resizing of each image and the creation of multiple copies are achieved thro
 ### Datasets Processing
 The dataset creation process involved capturing images in various lighting conditions like direct sunlight, indirect sunlight, and dimly lit areas. Images were taken from different angles such as slightly-sided left and right, full-sided left and right, and various angles of looking upward and downward. Occasional obstructions like hair, face shields, and sunglasses were also considered, leading to partial face obstructions. The total dataset consisted of 13,806 images categorized into 8,155 images showing correct face mask wearing (CWFM), 4,122 images depicting improper face mask wearing (IWFM), and 1,529 images showing no face mask (NFM). These images were saved and annotated using XML files, where annotations were done by dragging rectangular bounding boxes to the areas of interest and saving them in their respective XML files.
 
-![Datasets](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/screenshots/datasets-collection.png?token=GHSAT0AAAAAACKFESKF7PC2SI6QUV2MOJX6ZRXC7FQ)
+![Datasets](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/datasets-collection.png)
 
 
 ### CNN Algorithms Analysis
 
 The table presents results from CNN-based object classifiers for different categories including "Correct Wearing," "Incorrect Wearing," and "No Face mask." Each category is evaluated based on precision, recall, F1-score, and overall accuracy across various CNN models such as ResNet-50, InceptionV3, and MobileNetV2. For instance, the "Incorrect Wearing" category shows relatively high precision and recall scores across all models, indicating good performance in identifying instances where masks are worn incorrectly. Conversely, the "No Face mask" category generally has lower precision and recall scores, suggesting challenges in accurately identifying instances where masks are not worn. Overall, ResNet-50 and InceptionV3 demonstrate strong performance across multiple categories, while MobileNetV2 shows slightly lower scores, particularly in the "No Face mask" category.
 
-![Algorithms Analysis](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/screenshots/results.png?token=GHSAT0AAAAAACKFESKEYXPKZPTZ24O3RSMAZRXDG6A)
+![Algorithms Analysis](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/refs/heads/master/screenshots/results.png)
 
 
 
@@ -46,7 +46,7 @@ The table presents results from CNN-based object classifiers for different categ
 
 The table provides a comparative analysis of four face detection and recognition algorithms—Haar, DLIB, FaceNet, and MTCNN—across various scenarios, with Precision (Pre) and Accuracy (Acc) measured in percentages. It evaluates their performance at different distances (1m and 2m), angles (0°, 45°, 90°), and under occlusion conditions (Partial Occlusion, Half Face Occlusion). Additionally, it assesses their capability for multiple face detection. MTCNN generally shows superior performance with high Precision and Accuracy percentages, especially in detecting faces at different distances, angles, and under occlusion. However, other algorithms like DLIB and FaceNet exhibit variable performance, with differences in their Precision and Accuracy percentages based on the specific scenario being evaluated.
 
-![Results](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/screenshots/model-results.png?token=GHSAT0AAAAAACKFESKEN7WWM76QYVQIOQV2ZRXDC2A)
+![Results](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/refs/heads/screenshots/model-results.png)
 
 
 
@@ -55,7 +55,7 @@ The table provides a comparative analysis of four face detection and recognition
 
 The study's findings highlight MTCNN as the top-performing face detector. Among object classifiers, ResNet-50 achieved an average classification score of 72.5% for distances and angles, 78% for multiple detections, and 58% for occlusions, indicating limitations in detection under these conditions. Therefore, additional mathematical analysis and algorithms are recommended. However, ResNet-50 excelled with a notable 98% classification performance, especially in detecting specific categories. Specifically, it achieved an average classification performance of 88% in Correct Wearing, 89% in Incorrect Wearing, and 89% in No Face Mask categories across various conditions, demonstrating its effectiveness in these scenarios.
 
-![Conclusion](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/screenshots/application-interface.png?token=GHSAT0AAAAAACKFESKEGTVEB6MKYLJJYBS4ZRXDJJA)
+![Conclusion](https://raw.githubusercontent.com/Senpaixyz/facemask-detection-system/master/refs/heads/screenshots/application-interface.png)
 
 ### Youtube Demo Link
 
